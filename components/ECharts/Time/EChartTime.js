@@ -1,52 +1,31 @@
 import React, { useState, useEffect } from "react";
-import {
-  combineESOptionData,
-  GetAllGEXDataCallBack,
-} from "../../services/GetData.service";
-import { format } from "date-fns";
-import { ECOpts_Time } from "./EChartTime_Opts";
+
+import { ECOpts_Time, EChartTime_Opts } from "./EChartTime_Opts";
 import ReactEcharts from "echarts-for-react";
-import { ALL_URL, ES_URL } from "../../constants";
-import { useAxiosPrivate } from "../../hooks";
+import { GetAllModifiedToSData, GetModifiedToSData, combineESOptionData } from "../DataEChart";
+import { modify_data } from "../UtilECharts";
 
 const EChartTime = ({ symbol, data, greek, theme }) => {
   const [chartOptions, setChartOptions] = useState({});
   const [chartHeight, setChartHeight] = useState({});
 
-  // let option, chartHeight, data;
-  if (data){
-    if (symbol === "ES"){
 
-    }else{
-      
-    }
-  }
-  const fetchTimeGEX = async () => {
+  function getData (){
     setChartHeight([]);
     setChartOptions([]);
-    try {
-      // let option, chartHeight, data;
-      if (symbol === "ES") {
-        const response = await axiosPrivate(ES_URL, { params });
-        data = combineESOptionData(response?.data, greek);
-        console.log(symbol, data);
-      } else {
-        const response = await axiosPrivate(ALL_URL, { params });
-        data = response.data.map((data) => GetAllGEXDataCallBack(data, greek));
-        // console.log(data);
-        console.log(symbol, data);
-      }
-      ({ option, chartHeight } = ECOpts_Time(data));
-      setChartOptions(option);
+    let option, chartHeight
+    if (data){
+      ({option, chartHeight}= EChartTime_Opts(data));
+      setChartOptions(option)
       setChartHeight(chartHeight);
-    } catch (error) {
-      console.error(error);
     }
-  };
+    // ({option, chartHeight}= EChartTime_Opts(data));
+
+  }
+
   useEffect(() => {
-    fetchTimeGEX();
-    // eslint-disable-next-line
-  }, [startDate, endDate, greek, symbol]);
+    getData()
+  }, [data, greek, symbol]);
 
   return (
     <>

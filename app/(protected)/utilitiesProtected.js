@@ -20,6 +20,7 @@ export function formatDate(dateobj) {
   
 export function req_params(symbol, selectedGreek, finalDate){
     symbol = typeof symbol === 'object' ? JSON.stringify(symbol) : symbol;
+    console.log(symbol, typeof symbol)
     return {
       und_symbol: symbol,
       greek: selectedGreek,

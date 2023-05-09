@@ -1,4 +1,6 @@
-import { SecondToDate, formatNumbers } from "./UtilECharts";
+// import { SecondToDate, formatNumbers } from "./UtilECharts";
+
+import { SecondToDate, formatNumbers } from "../UtilECharts";
 
 export const transformArray = (
   chartData,
@@ -41,10 +43,12 @@ function makeGrid(unique, chartHeight) {
 }
 export const EChartTime_Opts = (chartData) => {
   // get unique dates
+
   const uni = [...new Set(chartData.map((e) => e.exp_date_str))]
     .sort((a, b) => a - b)
     .reverse();
   // sort X-axis data so that it will plot in order.
+
   const sortedData = chartData.sort((a, b) => a.strike_price - b.strike_price);
 
   // Setting echarts options
@@ -110,6 +114,6 @@ export const EChartTime_Opts = (chartData) => {
       },
     });
   }
-
+  // console.log("options", option)
   return { option: option, chartHeight: chartHeight };
 };

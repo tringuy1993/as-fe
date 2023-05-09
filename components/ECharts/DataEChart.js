@@ -85,6 +85,24 @@ export function combineESOptionData(data, greek) {
     return combined_data;
   }
 
+  export const GetAllModifiedToSData = (data, greek) => {
+    return {
+      strike_price: data.strike_price,
+      exp_date_str: data.exp_date_str,
+      last_price: data.last_price,
+      open_price: data.open_price,
+  
+      c_totalvolume: data.c_totalvolume,
+      // call_oi: data.call_oi,
+  
+      p_totalvolume: -1 * data.p_totalvolume,
+      // put_oi: data.put_open,
+  
+      total_notional_exposure: data[greek + "_total_notional_exposure"],
+      c_notion_expo: data["c_" + greek + "_notion_expo"],
+      p_notion_expo: data["p_" + greek + "_notion_expo"],
+    };
+  };
 
 export const GetModifiedToSData = (data, greek) => {
   return {

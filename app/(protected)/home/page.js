@@ -28,6 +28,7 @@ export default function Home() {
   const {data: ESData} = useFetch(params, ES_URL, update_param, updateInterval)
 
   //Request ToS Data
+  // const tickers = ["$SPX.X"]
   const tickers = ["$SPX.X", "SPY", "QQQ", "$NDX.X", "$RUT.X"]
   const params2 = req_params(tickers, selectedGreek, finalDate)
   const { data: ToSData} = useFetch(params2, GREEK_EXPO_URL, update_param, updateInterval)
@@ -44,7 +45,6 @@ export default function Home() {
   const tickersGraphs2 = [];
   if (ToSData?.data){
     const keys = Object.keys(ToSData?.data).filter(key => ToSData.data[key].length > 0);
-    
     for (const [key, value] of Object.entries(ToSData?.data)) {
       if (Array.isArray(value) && value.length > 0) {
         let theoData;

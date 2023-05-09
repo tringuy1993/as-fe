@@ -1,7 +1,21 @@
-import { GetModifiedToSData } from "./DataEChart";
+import { GetAllModifiedToSData, GetModifiedToSData } from "./DataEChart";
 
 export function modify_data(data, greek) {
   const modified_data = data?.map((data)=> GetModifiedToSData(data, greek))
+        // Need index in data
+  for (let i = 0; i < modified_data.length; i++) {
+          modified_data[i].index = i;
+        }
+
+  const nonzero_data = modified_data?.filter(function (obj) {
+    return obj.c_notion_expo !== 0 && obj.p_notion_expo !== 0;
+  });
+
+  return {modified_data: modified_data, nonzero_data: nonzero_data}
+}
+
+export function modify_time_data(data, greek) {
+  const modified_data = data?.map((data)=> GetAllModifiedToSData(data, greek))
         // Need index in data
   for (let i = 0; i < modified_data.length; i++) {
           modified_data[i].index = i;
