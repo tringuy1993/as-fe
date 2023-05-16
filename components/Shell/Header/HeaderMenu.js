@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import {
   Header,
   Group,
@@ -49,8 +49,8 @@ const HeaderMenu = () => {
               </a>
             </Indicator>
 
-            <a href="/BackTest" className={classes.link}>
-              Test
+            <a href="/backtest" className={classes.link}>
+              Back Test
             </a>
             <a href="/about" className={classes.link}>
               About
@@ -58,7 +58,7 @@ const HeaderMenu = () => {
             <a href="#contact" className={classes.link}>
               Contact
             </a>
-            <a href="/MusicGame" className={classes.link}>
+            <a href="/music" className={classes.link}>
               Music
             </a>
             {/* <ThemeToggler></ThemeToggler> */}
@@ -95,10 +95,10 @@ const HeaderMenu = () => {
           <a href="/" className={classes.link}>
             Home
           </a>
-          <a href="/TimeGamma" className={classes.link}>
+          <a href="/greektime" className={classes.link}>
             TimeGamma
           </a>
-          <a href="/MusicGame" className={classes.link}>
+          <a href="/music" className={classes.link}>
             Music
           </a>
           <a href="/about" className={classes.link}>

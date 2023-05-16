@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { Carousel } from "@mantine/carousel";
 import { Paper, Button } from "@mantine/core";

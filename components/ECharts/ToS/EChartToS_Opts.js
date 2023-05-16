@@ -21,12 +21,12 @@ export const EChartToS_Opts = (symbol, chartData, theoData) => {
 
   // Getting close and open price from chartData (GEX Data)
   const closestLastIndex2 = {
-    price_name: chartData[0]["last_price"],
-    index: findClosestIndex(chartData, chartData[0]["last_price"]),
+    price_name: chartData[0]?.last_price,
+    index: findClosestIndex(chartData, chartData[0]?.last_price),
   };
   const closestOpenIndex2 = {
-    price_name: chartData[0]["open_price"],
-    index: findClosestIndex(chartData, chartData[0]["open_price"]),
+    price_name: chartData[0]?.open_price,
+    index: findClosestIndex(chartData, chartData[0]?.open_price),
   };
 
   const legends = ["$Call", "$Put", "$Total", "$TheoGamma"];
@@ -145,7 +145,7 @@ export const EChartToS_Opts = (symbol, chartData, theoData) => {
     ],
   };
 
-  if (theoData.length !== 0 && chartData.length !== 0) {
+  if (theoData?.length !== 0 && chartData?.length !== 0) {
     series.push({
       datasetIndex: 1,
       xAxisIndex: 1,

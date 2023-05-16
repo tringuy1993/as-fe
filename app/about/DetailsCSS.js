@@ -12,13 +12,11 @@ small {
 /* Intro */
 #intro {
   padding-bottom: 4rem 1rem 10rem 1rem;
-  /* max-width: var(--maxwidth); */
   align-items: center;
-  /* margin:0 auto; */
+
 }
 
 #intro a {
-  /* color: var(--hotmag); */
   text-decoration: none;
 }
 #intro p{
@@ -43,7 +41,6 @@ small {
   font-family: var(--sans);
   font-size: 4rem;
   color: var(--aqua);
-  /* display: inline; */
   font-weight: 300;
 }
 
@@ -52,7 +49,6 @@ small {
   font-weight:normal;
 }
 
-/* Project Section */
 
 .blackbox {
   background-color: var(--black);
@@ -112,7 +108,6 @@ small {
 /* Section */
 .section-dkblue{
   background-color: var(--dkblue);
-  /* margin: 0 auto; */
 }
 
 /* Gradient Line */
@@ -132,16 +127,10 @@ small {
 
 .modal-header .btn-close {
   opacity:0.5;
-  /* color:white; */
   background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat
 }
 
 button.echart {width: 100%; height:50vh; background-color: var(--dkblue);}
-
-/* .calendarWrap {
-  display: inline-block;
-  position: relative;
-} */
 
 .calendarElement {
   position: absolute;

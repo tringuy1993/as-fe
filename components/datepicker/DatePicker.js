@@ -4,9 +4,6 @@ import { useForm } from "@mantine/form";
 import { startOfWeek } from "date-fns";
 import { useStyles } from "./DatePickerStyle";
 
-
-
-
 function getNextFriday2(date = new Date()) {
   const dateCopy = new Date(date.getTime());
 
@@ -21,7 +18,6 @@ function getNextFriday2(date = new Date()) {
 
 function disableDatesBeforeThisWeek(date) {
   return date < startOfWeek(new Date(), { weekStartsOn: 0 });
-
 }
 
 function DatePicker({ dateRange, onSubmit, BackTest }) {

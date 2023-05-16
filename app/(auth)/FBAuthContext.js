@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { createContext, useState, useContext, useEffect } from "react";
 // import { useNavigate, useLocation } from "react-router-dom";
 import {
@@ -16,7 +16,6 @@ export const FBAuthContext = createContext({});
 
 export const useFBAuth = () => useContext(FBAuthContext);
 
-
 export const FBAuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [errMsg, setErrMsg] = useState("");
@@ -25,15 +24,15 @@ export const FBAuthProvider = ({ children }) => {
 
   // https://reacthustle.com/blog/nextjs-redirect-after-login
   const router = useRouter();
-  const callbackUrl = (router.query?.callbackUrl) ?? "/";
-  
-  async function loginUser (e) {
+  const callbackUrl = router.query?.callbackUrl ?? "/";
+
+  async function loginUser(e) {
     await signInWithEmailAndPassword(auth, e.email, e.password)
-      .then(() => router.push(callbackUrl))
+      .then(() => router.push("/home"))
       .catch((error) => {
         setErrMsg(error.code);
       });
-  };
+  }
 
   let logoutUser = () => {
     signOut(auth);

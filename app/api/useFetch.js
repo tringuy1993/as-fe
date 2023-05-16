@@ -21,7 +21,7 @@ export default function useFetch(params, url, updatevalues, updateInterval) {
   useEffect(() => {
     fetchData();
 
-    if (updateInterval >0){
+    if (updateInterval > 0) {
       const intervalId = setInterval(fetchData, updateInterval);
       return () => clearInterval(intervalId);
     }
@@ -30,5 +30,3 @@ export default function useFetch(params, url, updatevalues, updateInterval) {
 
   return { data, isLoading, error };
 }
-
-

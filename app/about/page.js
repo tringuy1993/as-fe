@@ -1,10 +1,10 @@
-'use client'
+"use client";
 import { useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
 // import EchartCandles from "./EchartCandles";
 import { Grid } from "@mantine/core";
 import { Images } from "./Images";
-import "./Details.modules.css";
+// import "./DetailsCSS.js";
 import Image from "next/image";
 
 const Details = () => {

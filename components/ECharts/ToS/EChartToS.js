@@ -20,19 +20,18 @@ import { modify_data } from "../UtilECharts";
 //   return {modified_data: modified_data, nonzero_data: nonzero_data}
 // }
 
-export default function EChartToS ({ symbol, data, theoData, greek, theme }) {
+export default function EChartToS({ symbol, data, theoData, greek, theme }) {
   let ecOptions, ecVoloptions;
-  if (data){
-    const {modified_data, nonzero_data} = modify_data(data,greek)
-    if(theoData){
+  if (data) {
+    const { modified_data, nonzero_data } = modify_data(data, greek);
+    if (theoData) {
       for (let i = 0; i < theoData.length; i++) {
         theoData[i].index = i;
       }
     }
-    ecOptions = EChartToS_Opts(symbol, nonzero_data, theoData, greek, theme)
-    ecVoloptions = EChart_Opts_VolOI(symbol, modified_data)
+    ecOptions = EChartToS_Opts(symbol, nonzero_data, theoData, greek, theme);
+    ecVoloptions = EChart_Opts_VolOI(symbol, modified_data);
   }
-
 
   return (
     <Grid>
@@ -78,5 +77,4 @@ export default function EChartToS ({ symbol, data, theoData, greek, theme }) {
   // } else {
   //   return <></>;
   // }
-};
-
+}
